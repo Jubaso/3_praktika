@@ -21,7 +21,7 @@ void getData() { //gauna meniu info
     }
 
     for (int i = 0; i < dydis; i++) {
-        getline(failas, menuList[i].menuItem,' ');
+        getline(failas, menuList[i].menuItem,';');
         failas >> menuList[i].menuPrice;
         failas.ignore();
     }
