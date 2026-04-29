@@ -74,3 +74,34 @@ void printCheck(int pasirinkti[], int porcijos[], int kiekPasirinkta) { //sukuri
     failas.close();
     cout << "Saskaita issaugota faile receipt.txt" << endl;
 }
+
+int main() {
+    getData();
+
+    int pasirinkti[dydis] = {0};
+    int porcijos[dydis] = {0};
+    int kiekPasirinkta = 0;
+
+    int pasirinkimas;
+
+    do {
+        showMenu();
+        cout << "Pasirinkimas: ";
+        cin >> pasirinkimas;
+
+        if (pasirinkimas >= 1 && pasirinkimas <= dydis) {
+            int kiek;
+            cout << "Kiek porciju? ";
+            cin >> kiek;
+
+            pasirinkti[kiekPasirinkta] = pasirinkimas - 1;
+            porcijos[kiekPasirinkta] = kiek;
+            kiekPasirinkta++;
+        }
+
+    } while (pasirinkimas != 0);
+
+    printCheck(pasirinkti, porcijos, kiekPasirinkta);
+
+    return 0;
+}
